@@ -46,10 +46,15 @@
         <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100">
             <div class="px-4 pt-4 pb-6">
                 <ul class="space-y-2">
-                    <li><a href="#" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Inicio</a>
+                    <li><a href="#"
+                            class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Inicio</a>
                     </li>
-                    <li><a href="#about" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Acerca de</a></li>
-                    <li><a href="#services" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Servicios</a></li>
+                    <li><a href="#about"
+                            class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Acerca
+                            de</a></li>
+                    <li><a href="#services"
+                            class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Servicios</a>
+                    </li>
                     <li><a href="#contact"
                             class="block px-3 py-2 rounded-md text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Contacto</a>
                     </li>
@@ -66,8 +71,10 @@
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="relative container mx-auto p-8 text-center flex flex-col justify-center">
                 <h1 class="text-4xl font-bold mb-4 text-white">Bienvenido a Mi Sitio</h1>
-                <p class="text-lg text-gray-200">Este es un ejemplo de una página web con un diseño moderno y responsivo utilizando Tailwind CSS.</p>
-                <a href="#contact" class="inline-block mt-4 px-4 py-2 bg-[var(--color-primary)] text-white rounded-md shadow-sm hover:bg-[var(--color-primary-hover)]">Contáctanos</a>
+                <p class="text-lg text-gray-200">Este es un ejemplo de una página web con un diseño moderno y responsivo
+                    utilizando Tailwind CSS.</p>
+                <a href="#contact"
+                    class="inline-block mt-4 px-4 py-2 bg-[var(--color-primary)] text-white rounded-md shadow-sm hover:bg-[var(--color-primary-hover)]">Contáctanos</a>
             </div>
         </section>
 
@@ -76,6 +83,8 @@
                 <h2 class="text-3xl font-bold mb-4">Nuestros Servicios</h2>
                 <p class="text-lg text-gray-700">Ofrecemos una variedad de servicios para satisfacer tus necesidades.
                 </p>
+                <div id="services-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 items-stretch"></div>
             </div>
         </section>
 
@@ -111,6 +120,8 @@
             &copy; 2024 Mi Sitio. Todos los derechos reservados.
         </div>
     </footer>
+
+    <script src="/src/js/serviceData.js"></script>
     <script>
         // Toggle mobile menu
         const navToggle = document.getElementById('nav-toggle');
