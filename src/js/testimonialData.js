@@ -26,18 +26,21 @@ const testimonials = [
     },
 ];
 
+function initials(name) {
+    if (!name) return '';
+    return name.split(' ').map(n => n[0]).slice(0,2).join('').toUpperCase();
+}
+
 function createCardTestimonial(testimonial) {
+
+    const imgHtml = `<div class="w-16 h-16 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-semibold">${initials(testimonial.name)}</div>`;
+
     return `
-        <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
-            <div class="w-full h-48 md:h-56 flex items-center justify-center bg-gray-50 p-4">
-                <img src="${testimonial.imagen ?? '/public/default-avatar.png'}" alt="${testimonial.name}" class="max-h-full w-auto object-contain">
-            </div>
-            <div class="card-body p-6 flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xl font-semibold mb-2">${testimonial.name}</h3>
-                    <p class="text-gray-600">${testimonial.msg}</p>
-                </div>
-                
+        <article class="bg-white rounded-lg shadow p-4 flex items-start gap-4">
+            <div class="flex-shrink-0">${imgHtml}</div>
+            <div class="text-left">
+                <h3 class="font-semibold">${testimonial.name}</h3>
+                <p class="text-gray-600">${testimonial.msg}</p>
             </div>
         </article>
     `;
@@ -45,9 +48,8 @@ function createCardTestimonial(testimonial) {
 
 function renderTestimonials() {
     const container = document.getElementById('testimonials-container');
+    if (!container) return;
     container.innerHTML = testimonials.map(createCardTestimonial).join('');
 }
 
 document.addEventListener('DOMContentLoaded', renderTestimonials);
-
-export default testimonials;
